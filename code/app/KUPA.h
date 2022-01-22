@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include "../User.h"
-#include "../CSI.h"
+#include "../API/CSI.h"
 
 class KUPA {
 protected:
@@ -19,7 +19,7 @@ protected:
     void subscribe_location();
 
     void unsubscribe_location();
-
+    void display_locations() const;
     void admin_log();
 
     void take_string_input();

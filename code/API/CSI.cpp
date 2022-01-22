@@ -1,8 +1,18 @@
 #include "CSI.h"
+#include "../locations/locations/Krakow.h"
+#include "../locations/locations/Opole.h"
+#include "../locations/locations/Siechnice.h"
+#include "../locations/locations/Wroclaw.h"
 
 CSI::CSI() {
     m_user_list.reserve(3);
     m_user_list.emplace_back("null");
+
+//    m_location_list.reserve(4);
+//    m_location_list.emplace_back(Location("cos"));
+//    m_location_list.emplace_back(Opole());
+//    m_location_list.emplace_back(Siechnice());
+//    m_location_list.emplace_back(Wroclaw());
 }
 
 User *const CSI::log_in(const std::string &username) {
@@ -27,4 +37,9 @@ bool CSI::find_location(std::string &wanted_location) {
     }
     return false;
 
+}
+
+void CSI::display_locations() const {
+    for(int i =0; i < m_location_list.size(); i++)
+        std::cout<<m_location_list[i].get_location_name()<<" ";
 }

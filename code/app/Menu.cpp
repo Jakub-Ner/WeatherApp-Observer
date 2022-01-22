@@ -52,7 +52,7 @@ void Menu::main_menu() {
     std::cout << R"(
 
 main_options:
-[1]-display your list of subscribed locations
+[1]-display locations
 [2]-display your measurements
 [3]-subscribe new location
 [4]-unsubscribe location
@@ -67,11 +67,11 @@ main_options:
     }
     switch (short_input) {
         case main_options::display_locations:
-            KUPA::m_current_user->display_locations();
+            KUPA::display_locations();
             break;
 
         case main_options::display_measurements:
-            KUPA::m_current_user->display_measurements_list();
+            KUPA::m_current_user->get_measurements_list();
             break;
 
         case main_options::sub_new_location:

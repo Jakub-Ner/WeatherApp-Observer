@@ -5,10 +5,10 @@
 #include "../../Measurement.h"
 
 class Wroclaw : public Location {
-public: Measurement sensors = {10.1, 13.2, true};
+public: Measurement sensors = {18.1, 70.2, true};
 
 public:
-    Wroclaw(std::string location_name);
+    Wroclaw();
 
     Measurement get_measurement();
 };

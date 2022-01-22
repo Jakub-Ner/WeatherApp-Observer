@@ -4,8 +4,8 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
-#include "User.h"
-#include "locations/Location.h"
+#include "../User.h"
+#include "../locations/Location.h"
 
 
 class CSI {
@@ -16,9 +16,9 @@ public:
     User* const log_in(const std::string& username);
     User* const add_user(std::string username);
     bool find_location(std::string& wanted_location);
+    void display_locations() const;
 
-
-};
+    };
 
 
 #endif //WEATHERAPP_CSI_H
