@@ -11,6 +11,7 @@ class Location {
 protected:
     Location(std::string&& location_name);
 public:
+    ~Location();
 
 public:
     void add_user(const User& user);

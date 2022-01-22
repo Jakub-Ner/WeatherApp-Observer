@@ -10,15 +10,21 @@
 
 class CSI {
     std::vector<User> m_user_list;
-    std::vector<Location> m_location_list;
+    std::vector<Location *> m_location_list;
 public:
     CSI();
-    User* const log_in(const std::string& username);
-    User* const add_user(std::string username);
-    bool find_location(std::string& wanted_location);
+
+    ~CSI();
+
+    User *const log_in(const std::string &username);
+
+    User *const add_user(std::string username);
+
+    bool find_location(std::string &wanted_location);
+
     void display_locations() const;
 
-    };
+};
 
 
 #endif //WEATHERAPP_CSI_H
