@@ -102,20 +102,26 @@ build CMakeFiles/untitled.dir/code/CSI.cpp.o: CXX_COMPILER__untitled_Debug /home
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code
 
-build CMakeFiles/untitled.dir/code/Measurement.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/code/Measurement.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/code/Measurement.cpp.o.d
-  FLAGS = -g -std=gnu++17
-  OBJECT_DIR = CMakeFiles/untitled.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code
-
 build CMakeFiles/untitled.dir/code/locations/Location.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/code/locations/Location.cpp || cmake_object_order_depends_target_untitled
   DEP_FILE = CMakeFiles/untitled.dir/code/locations/Location.cpp.o.d
   FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code/locations
 
-build CMakeFiles/untitled.dir/code/shit.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/code/shit.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/code/shit.cpp.o.d
+build CMakeFiles/untitled.dir/shit.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/shit.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/shit.cpp.o.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles/untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+
+build CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/code/locations/locations/Wroclaw.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles/untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code/locations/locations
+
+build CMakeFiles/untitled.dir/code/Measurement.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/code/Measurement.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/code/Measurement.cpp.o.d
   FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code
@@ -128,7 +134,7 @@ build CMakeFiles/untitled.dir/code/shit.cpp.o: CXX_COMPILER__untitled_Debug /hom
 #############################################
 # Link the executable untitled
 
-build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/code/app/Menu.cpp.o CMakeFiles/untitled.dir/code/app/KUPA.cpp.o CMakeFiles/untitled.dir/code/User.cpp.o CMakeFiles/untitled.dir/code/CSI.cpp.o CMakeFiles/untitled.dir/code/Measurement.cpp.o CMakeFiles/untitled.dir/code/locations/Location.cpp.o CMakeFiles/untitled.dir/code/shit.cpp.o
+build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/code/app/Menu.cpp.o CMakeFiles/untitled.dir/code/app/KUPA.cpp.o CMakeFiles/untitled.dir/code/User.cpp.o CMakeFiles/untitled.dir/code/CSI.cpp.o CMakeFiles/untitled.dir/code/locations/Location.cpp.o CMakeFiles/untitled.dir/shit.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o CMakeFiles/untitled.dir/code/Measurement.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/untitled.dir
   POST_BUILD = :

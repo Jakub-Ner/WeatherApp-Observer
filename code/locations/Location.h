@@ -8,7 +8,9 @@
 class Location {
     std::string m_location_name;
     std::vector<User> m_user_list;
-    Location(const std::string& location_name);
+protected:
+    Location(std::string location_name);
+
 public:
     void add_user(const User& user);
     std::string get_location_name() const;

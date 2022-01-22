@@ -1,6 +1,6 @@
 #include "Location.h"
 
-Location::Location(const std::string& location_name)
+Location::Location(std::string location_name)
     : m_location_name(location_name) {}
 
 void Location::add_user(const User &user) {
