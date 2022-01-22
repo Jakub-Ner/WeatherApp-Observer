@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 project(WeatherApp)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
-add_executable(untitled main.cpp Menu.cpp Menu.h KUPA.cpp KUPA.h User.cpp User.h CSI.cpp CSI.h Measurement.cpp Measurement.h Location.cpp Location.h)
+add_executable(untitled main.cpp code/app/Menu.cpp code/app/Menu.h code/app/KUPA.cpp code/app/KUPA.h code/User.cpp code/User.h code/CSI.cpp code/CSI.h code/Measurement.cpp code/Measurement.h code/locations/Location.cpp code/locations/Location.h shit.cpp shit.h)

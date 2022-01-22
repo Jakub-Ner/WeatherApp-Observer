@@ -3,8 +3,8 @@
 
 #include <vector>
 #include <string>
-#include "User.h"
-#include "CSI.h"
+#include "../User.h"
+#include "../CSI.h"
 
 class KUPA {
 protected:

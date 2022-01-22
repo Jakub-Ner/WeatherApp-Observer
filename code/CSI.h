@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 #include "User.h"
-#include "Location.h"
+#include "locations/Location.h"
 
 
 class CSI {
