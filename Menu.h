@@ -1,25 +1,23 @@
 #ifndef UNTITLED_MENU_H
 #define UNTITLED_MENU_H
 #include "iostream"
-enum options{
+#include "KUPA.h"
+enum welcome_options{
+    create_account = 1, log_in
+};
+enum main_options{
     display_locations = 1, display_measurements, sub_new_location, unsub_location, save_data, log_out
 };
 
-class Menu {
+class Menu : public KUPA{
+private:
 public:
     [[noreturn]] void menu();
 
 private:
-void welcome();
-void create_user();
-void log_in();
-void main_menu();
-void save_measurements();
-void subscribe_location();
-void unsubscribe_location();
-std::string take_string_input();
-int take_int_input();
-void admin_log();
+    void welcome();
+    void main_menu();
+    void log_in();
 
 };
 

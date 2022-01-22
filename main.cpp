@@ -1,7 +1,9 @@
 #include <bits//stdc++.h>
 #include "Menu.h"
 #include <memory>
+
 int main() {
-    Menu::menu();
+    Menu().menu();
     return 0;
+
 }

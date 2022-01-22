@@ -1,0 +1,10 @@
+#ifndef WEATHERAPP_MEASUREMENT_H
+#define WEATHERAPP_MEASUREMENT_H
+
+
+class Measurement {
+
+};
+
+
+#endif //WEATHERAPP_MEASUREMENT_H
