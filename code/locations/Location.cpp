@@ -13,8 +13,6 @@ void Location::add_user(User* user) {
 bool Location::remove(User* user) {
     int position = locate_position_by_ptr(m_user_list, user);
     if(position > m_user_list.size()) return false;
-
-    delete m_user_list[position];
     m_user_list.erase(m_user_list.begin()+position);
     return true;
 }
