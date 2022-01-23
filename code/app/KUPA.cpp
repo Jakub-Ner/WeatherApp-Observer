@@ -14,20 +14,23 @@ void KUPA::unsubscribe_location() {
     switch (m_current_user->find_location(string_input)) {
 
         case result_of_subscription::location_not_found:
-            std::cout<<"Location not found\n";
+            std::cout << "Location not found\n";
             break;
+
         case result_of_subscription::location_on_user_list:
-            if(m_csi->remove_user_from_location(*m_current_user, string_input)) {
-                m_current_user->add_location(string_input);
-                std::cout << string_input << " has been deleted";
-            }
-            else std::cout<<"ERROR: Could not find location in CSI";
+            if (m_csi->remove_user_from_location(m_current_user, string_input)) {
+                if (m_current_user->remove_location_from_list(string_input))
+                    std::cout << string_input << " has been successfully deleted";
+                else std::cout << "ERROR: could not find location in user list\n";
+            } else std::cout << "ERROR: Could not find location in CSI\n";
             break;
+
         case result_of_subscription::location_available:
-            if(m_csi->add_user_to_location(*m_current_user, string_input)){
+            if (m_csi->add_user_to_location(m_current_user, string_input)) {
                 m_current_user->add_location(string_input);
-                std::cout<<"Location hadn't been subscribed\n";
+                std::cout << "Location hadn't been subscribed\n";
             }
+            break;
 
     }
 }
@@ -38,17 +41,16 @@ void KUPA::subscribe_location() {
     switch (m_current_user->find_location(string_input)) {
 
         case result_of_subscription::location_not_found:
-            std::cout<<"\nERROR: Location not found\n";
+            std::cout << "\nERROR: Location not found\n";
             break;
         case result_of_subscription::location_on_user_list:
-            std::cout<<"\nERROR: Location already added";
+            std::cout << "\nERROR: Location already added";
             break;
         case result_of_subscription::location_available:
-            if(m_csi->add_user_to_location(*m_current_user, string_input)){
+            if (m_csi->add_user_to_location(m_current_user, string_input)) {
                 m_current_user->add_location(string_input);
-                std::cout<<"\nAdded location :)\n";
-            }
-            else std::cout<<"\nERROR: Could not found Location in CSI";
+                std::cout << "\nAdded location :)\n";
+            } else std::cout << "\nERROR: Could not found Location in CSI";
             break;
 
     }

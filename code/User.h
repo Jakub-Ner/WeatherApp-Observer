@@ -48,6 +48,8 @@ public:
 //    int subscribeLocation(const std::string location);
 
     int find_location(std::string &wanted_location);
+
+    bool remove_location_from_list(std::string location);
 };
 
 

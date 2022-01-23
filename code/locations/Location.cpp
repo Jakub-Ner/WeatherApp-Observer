@@ -2,21 +2,20 @@
 #include <iostream>
 #include <algorithm>
 #include "../functions.h"
-//
-//template<typename T>
-//int location_position1(std::vector<T> &list, T &item);
 
 Location::Location(std::string &&location_name)
         : m_location_name(location_name) { std::cout << "siemka"; }
 
-void Location::add_user(const User &user) {
+void Location::add_user(User* user) {
     m_user_list.emplace_back(user);
 }
 
-bool Location::remove(User& user) {
-    int position = location_position(m_user_list, user);
+bool Location::remove(User* user) {
+    int position = locate_position_by_ptr(m_user_list, user);
     if(position > m_user_list.size()) return false;
-//    m_user_list.erase(m_user_list.begin()+position);
+
+    delete m_user_list[position];
+    m_user_list.erase(m_user_list.begin()+position);
     return true;
 }
 
@@ -25,10 +24,5 @@ std::string& Location::get_location_name() {
 }
 
 Location::~Location() {
-    std::cout << "Loc died\n";
+    std::cout<<" location died \n";
 }
-
-//template<typename T>
-//int location_position1(std::vector<T> &list, T &item) {
-//    return std::find(list.begin(), list.end(), item) - list.begin();
-//}

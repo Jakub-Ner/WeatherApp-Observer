@@ -9,7 +9,7 @@ public: Measurement sensors = {{}, 83.2, true};
 
 public:
     Krakow();
-
+    ~Krakow(){" papa krakow ";}
     Measurement get_measurement();
 };
 #endif //WEATHERAPP_KRAKOW_H

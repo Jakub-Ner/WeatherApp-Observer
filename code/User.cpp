@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include "User.h"
+#include "functions.h"
 
 User::User(const std::string &name)
         : m_name(name) {
@@ -72,4 +73,11 @@ int User::find_location(std::string &wanted_location) {
     }
     return location_not_found;
 
+}
+
+bool User::remove_location_from_list(std::string location) {
+    int position = locate_position(m_user_locations, location);
+    if(position > m_user_locations.size()) return false;
+    m_user_locations.erase(m_user_locations.begin() + position);
+    return true;
 }
