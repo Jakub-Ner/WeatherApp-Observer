@@ -7,6 +7,10 @@
 #include "Measurement.h"
 //#include "locations/Location.h"
 
+enum result_of_subscription{
+    location_not_found = 0, location_already_added, location_available
+};
+
 class User {
 protected:
     const std::string m_name;
@@ -38,10 +42,11 @@ public:
 
     void add_location(std::string &location);
 
-    bool unsubscribeLocation(const std::string location);
+//    int unsubscribeLocation(const std::string location);
+//
+//    int subscribeLocation(const std::string location);
 
-    bool subscribeLocation(const std::string location);
-
+    int find_location(std::string &wanted_location);
 };
 
 

@@ -11,7 +11,20 @@ void KUPA::save_measurements() {
 void KUPA::subscribe_location() {
     std::cout << "\nWhat location do you want to subscribe?\n";
     take_string_input();
-    m_current_user->subscribeLocation(string_input);
+    switch (m_current_user->find_location(string_input)) {
+
+        case result_of_subscription::location_not_found:
+            std::cout<<"\nLocation not found\n";
+            break;
+        case result_of_subscription::location_already_added:
+            std::cout<<"\nLocation already added";
+            break;
+        case result_of_subscription::location_available:
+            break;
+
+    }
+    //    int option = m_current_user->subscribeLocation(string_input);
+
 }
 
 void KUPA::unsubscribe_location() {

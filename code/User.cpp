@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "User.h"
 
 User::User(const std::string &name)
@@ -36,16 +37,16 @@ void User::add_location(std::string &location) {
 
 }
 
-bool User::subscribeLocation(const std::string location) {
-    return false;
-}
+//int User::subscribeLocation(const std::string location) {
+//
+//}
+//
+//
+//int User::unsubscribeLocation(const std::string location) {
+//    return false;
+//}
 
-
-bool User::unsubscribeLocation(const std::string location) {
-    return false;
-}
-
-const std::vector<std::string> & User::get_available_locations() const {
+const std::vector<std::string> &User::get_available_locations() const {
     return m_available_locations;
 }
 
@@ -53,6 +54,22 @@ void User::set_available_locations(const std::vector<std::string> &mStringLocati
     m_available_locations = mStringLocationList;
 }
 
-const std::vector<std::string> & User::get_user_locations() const{
+const std::vector<std::string> &User::get_user_locations() const {
     return m_user_locations;
+}
+
+int User::find_location(std::string &wanted_location) {
+        if (std::any_of(m_user_locations.begin(),
+                        m_user_locations.end(),
+                        [&](std::string& loc){return loc == wanted_location;})) {
+            return location_already_added;
+        }
+
+    if (std::any_of(m_available_locations.begin(),
+                    m_available_locations.end(),
+                    [&](std::string& loc){return loc == wanted_location;})) {
+        return location_available;
+    }
+    return location_not_found;
+
 }

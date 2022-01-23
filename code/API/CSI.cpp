@@ -34,16 +34,7 @@ User *const CSI::add_user(std::string username) {
     return &m_user_list.back();
 }
 
-//bool CSI::find_location(std::string &wanted_location) {
-//    auto lambda = [&](const Location *location) {
-//        return location->get_location_name() == wanted_location;
-//    };
-//    if (std::any_of(m_location_list.begin(), m_location_list.end(), lambda)) {
-//        return true;
-//    }
-//    return false;
-//
-//}
+
 
 const std::vector<std::string>& CSI::get_location_list() {
     return m_location_list_for_others;
