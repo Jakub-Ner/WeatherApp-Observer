@@ -13,6 +13,10 @@ CSI::CSI() {
     m_location_list.emplace_back(new Opole());
     m_location_list.emplace_back(new Siechnice());
     m_location_list.emplace_back(new Wroclaw());
+
+    for(int i =0; i<m_location_list.size(); i++){
+        m_location_list_for_others.emplace_back(m_location_list[i]->get_location_name());
+    }
 }
 
 User *const CSI::log_in(const std::string &username) {
@@ -26,23 +30,23 @@ User *const CSI::log_in(const std::string &username) {
 
 User *const CSI::add_user(std::string username) {
     m_user_list.emplace_back(username);
+    m_user_list.back().set_available_locations(m_location_list_for_others);
     return &m_user_list.back();
 }
 
-bool CSI::find_location(std::string &wanted_location) {
-    auto lambda = [&](const Location *location) {
-        return location->get_location_name() == wanted_location;
-    };
-    if (std::any_of(m_location_list.begin(), m_location_list.end(), lambda)) {
-        return true;
-    }
-    return false;
+//bool CSI::find_location(std::string &wanted_location) {
+//    auto lambda = [&](const Location *location) {
+//        return location->get_location_name() == wanted_location;
+//    };
+//    if (std::any_of(m_location_list.begin(), m_location_list.end(), lambda)) {
+//        return true;
+//    }
+//    return false;
+//
+//}
 
-}
-
-void CSI::display_locations() const {
-    for (int i = 0; i < m_location_list.size(); i++)
-        std::cout << m_location_list[i]->get_location_name() << " ";
+const std::vector<std::string>& CSI::get_location_list() {
+    return m_location_list_for_others;
 }
 
 CSI::~CSI() {

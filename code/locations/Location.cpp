@@ -7,7 +7,7 @@ void Location::add_user(const User &user) {
     m_user_list.emplace_back(user);
 }
 
-std::string Location::get_location_name() const {
+std::string& Location::get_location_name() {
     return m_location_name;
 }
 

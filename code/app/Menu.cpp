@@ -24,7 +24,7 @@ Hi!
     switch (short_input) {
 
         case welcome_options::create_account:
-            std::cout << "\nSet your string_input\n";
+            std::cout << "\nSet your username\n";
             log_in();
             if ((*m_current_user).get_name() == "null") {
                 m_current_user = m_csi->add_user(string_input);
@@ -32,7 +32,7 @@ Hi!
             break;
 
         case welcome_options::log_in:
-            std::cout << "\nEnter your string_input\n";
+            std::cout << "\nEnter your username\n";
             log_in();
             if ((*m_current_user).get_name() == "null") {
                 std::cout << "\nCouldn't find the user\n";

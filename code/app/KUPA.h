@@ -20,6 +20,7 @@ protected:
 
     void unsubscribe_location();
     void display_locations() const;
+    void display(const std::vector<std::string>& list) const;
     void admin_log();
 
     void take_string_input();

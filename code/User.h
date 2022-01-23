@@ -13,24 +13,33 @@ protected:
 private:
     static int dont_care;
     std::vector<Measurement> m_measurement_list;
-//    std::vector<Location> m_location_list;
-    std::vector<std::string*> m_string_location_list;
-public:
-    const std::vector<std::string *> getMStringLocationList() const;
+    std::vector<std::string> m_available_locations;
+    std::vector<std::string> m_user_locations;
 
 public:
-    User(const std::string& name);
+    User(const std::string &name);
+
     ~User();
-    User(const User& other);
 
-    const std::string& get_name()const;
+    User(const User &other);
+
+public:
+    const std::vector<std::string> & get_user_locations() const;
+
+    void set_available_locations(const std::vector<std::string> &mStringLocationList);
+
+    const std::vector<std::string> & get_available_locations() const;
+
+    const std::string &get_name() const;
 
     void get_measurements_list() const;
-    void add_measurements(const Measurement& measurement) const;
 
-    void add_location(std::string& location);
+    void add_measurements(const Measurement &measurement) const;
+
+    void add_location(std::string &location);
 
     bool unsubscribeLocation(const std::string location);
+
     bool subscribeLocation(const std::string location);
 
 };

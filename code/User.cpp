@@ -45,6 +45,14 @@ bool User::unsubscribeLocation(const std::string location) {
     return false;
 }
 
-const std::vector<std::string *> User::getMStringLocationList() const {
-    return m_string_location_list;
+const std::vector<std::string> & User::get_available_locations() const {
+    return m_available_locations;
+}
+
+void User::set_available_locations(const std::vector<std::string> &mStringLocationList) {
+    m_available_locations = mStringLocationList;
+}
+
+const std::vector<std::string> & User::get_user_locations() const{
+    return m_user_locations;
 }

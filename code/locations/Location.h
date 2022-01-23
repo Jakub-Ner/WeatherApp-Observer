@@ -15,7 +15,7 @@ public:
 
 public:
     void add_user(const User& user);
-    std::string get_location_name() const;
+    std::string& get_location_name() ;
     virtual Measurement get_measurement() = 0;
 
 };

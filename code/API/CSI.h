@@ -11,6 +11,7 @@
 class CSI {
     std::vector<User> m_user_list;
     std::vector<Location *> m_location_list;
+    std::vector<std::string> m_location_list_for_others;
 public:
     CSI();
 
@@ -20,9 +21,9 @@ public:
 
     User *const add_user(std::string username);
 
-    bool find_location(std::string &wanted_location);
+//    bool find_location(std::string &wanted_location);
 
-    void display_locations() const;
+    const std::vector<std::string>& get_location_list();
 
 };
 

@@ -41,17 +41,21 @@ void KUPA::admin_log() {
 
 void KUPA::display_locations() const {
     std::cout << "All locations:\n";
-    m_csi->display_locations();
+    const std::vector<std::string> &all_locations = m_current_user->get_available_locations();
+    display(all_locations);
 
-    std::cout<<"\nYours locations:\n";
-   std::vector<std::string*> list = m_current_user->getMStringLocationList();
-    for(int i=0; i<list.size(); i++)
-        std::cout<<*list[i];
+    std::cout << "\nYours locations:\n";
+    const std::vector<std::string> &user_locations = m_current_user->get_user_locations();
+    display(user_locations);
 }
 
+void KUPA::display(const std::vector<std::string> &list) const {
+    for (int i = 0; i < list.size(); i++)
+        std::cout << list[i] << " ";
+}
 
 //User KUPA::log_in(const std::string& name) const{
-//    User::display_locations();
+//    User::get_location_list();
 //    for (User user : m_user_list) {
 //        if (user.get_name() == name) {
 //            return user;
