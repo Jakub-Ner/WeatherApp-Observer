@@ -1,19 +1,23 @@
 #include "CSI.h"
-#include "../locations/locations/Krakow.h"
-#include "../locations/locations/Opole.h"
-#include "../locations/locations/Siechnice.h"
-#include "../locations/locations/Wroclaw.h"
+#include "../functions.h"
+
+template<typename T>
+int location_position(std::vector<T> &list, T &item) {
+    return std::find(list.begin(), list.end(), item) - list.begin();
+}
 
 CSI::CSI() {
     m_user_list.reserve(3);
     m_user_list.emplace_back("null");
 
-    m_location_list.reserve(4);
+    int locations_number = 4;
+    m_location_list.reserve(locations_number);
     m_location_list.emplace_back(new Krakow());
     m_location_list.emplace_back(new Opole());
     m_location_list.emplace_back(new Siechnice());
     m_location_list.emplace_back(new Wroclaw());
 
+    m_location_list_for_others.reserve(locations_number);
     for (int i = 0; i < m_location_list.size(); i++) {
         m_location_list_for_others.emplace_back(m_location_list[i]->get_location_name());
     }
@@ -45,15 +49,18 @@ CSI::~CSI() {
 }
 
 bool CSI::add_user_to_location(User &user, std::string &wanted_location) {
-    int position = location_position(wanted_location);
+    int position = location_position(m_location_list_for_others, wanted_location);
     if (position > m_location_list.size())
         return false;
     m_location_list[position]->add_user(user);
     return true;
 }
 
-int CSI::location_position(std::string &location_name) {
-    return std::find(m_location_list_for_others.begin(),
-                     m_location_list_for_others.end(),
-                     location_name) - m_location_list_for_others.begin();
+bool CSI::remove_user_from_location(User &user, std::string unsub_location) {
+    int position = location_position(m_location_list_for_others, unsub_location);
+    if (position > m_location_list.size())
+        return false;
+    return m_location_list[position]->remove(user);
 }
+
+

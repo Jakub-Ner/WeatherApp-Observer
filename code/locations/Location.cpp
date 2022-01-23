@@ -1,10 +1,19 @@
 #include "Location.h"
 
+
+
 Location::Location(std::string &&location_name)
         : m_location_name(location_name) { std::cout << "siemka"; }
 
 void Location::add_user(const User &user) {
     m_user_list.emplace_back(user);
+}
+
+bool Location::remove(User& user) {
+//    int position = location_position(m_user_list, user);
+//    if(position > m_user_list.size()) return false;
+//    m_user_list.erase(m_user_list.begin()+position);
+    return true;
 }
 
 std::string& Location::get_location_name() {
@@ -14,7 +23,4 @@ std::string& Location::get_location_name() {
 Location::~Location() {
     std::cout << "Loc died\n";
 }
-
-
-
 

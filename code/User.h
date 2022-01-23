@@ -8,7 +8,7 @@
 //#include "locations/Location.h"
 
 enum result_of_subscription{
-    location_not_found = 0, location_already_added, location_available
+    location_not_found = 0, location_on_user_list, location_available
 };
 
 class User {
@@ -26,7 +26,10 @@ public:
     ~User();
 
     User(const User &other);
-
+public:
+    bool operator==(const User& other) const{
+        return m_name == other.m_name;
+    }
 public:
     const std::vector<std::string> & get_user_locations() const;
 

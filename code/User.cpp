@@ -62,7 +62,7 @@ int User::find_location(std::string &wanted_location) {
         if (std::any_of(m_user_locations.begin(),
                         m_user_locations.end(),
                         [&](std::string& loc){return loc == wanted_location;})) {
-            return location_already_added;
+            return location_on_user_list;
         }
 
     if (std::any_of(m_available_locations.begin(),

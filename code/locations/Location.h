@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "../User.h"
+#include "../functions.h"
 
 class Location {
     std::string m_location_name;
@@ -18,7 +19,7 @@ public:
     std::string& get_location_name() ;
     virtual Measurement get_measurement() = 0;
 
+    bool remove(User& user);
 };
-
 
 #endif //WEATHERAPP_LOCATION_H

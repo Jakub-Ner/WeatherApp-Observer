@@ -4,8 +4,13 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
+
 #include "../User.h"
 #include "../locations/Location.h"
+#include "../locations/locations/Krakow.h"
+#include "../locations/locations/Opole.h"
+#include "../locations/locations/Siechnice.h"
+#include "../locations/locations/Wroclaw.h"
 
 
 class CSI {
@@ -23,9 +28,8 @@ public:
 
     const std::vector<std::string>& get_location_list();
 
+    bool remove_user_from_location(User &user, std::string basicString);
+
 private:
-    int location_position(std::string& location_name);
 };
-
-
 #endif //WEATHERAPP_CSI_H
