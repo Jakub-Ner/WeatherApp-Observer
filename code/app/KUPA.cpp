@@ -20,7 +20,10 @@ void KUPA::subscribe_location() {
             std::cout<<"\nLocation already added";
             break;
         case result_of_subscription::location_available:
-            break;
+            if(m_csi->add_user_to_location(*m_current_user, string_input)){
+                m_current_user->add_location(string_input);
+                std::cout<<"\nAdded location :)\n";
+            }
 
     }
     //    int option = m_current_user->subscribeLocation(string_input);

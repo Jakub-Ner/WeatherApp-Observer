@@ -16,15 +16,15 @@ public:
     CSI();
 
     ~CSI();
-
+    bool add_user_to_location(User& user, std::string& wanted_location);
     User *const log_in(const std::string &username);
 
     User *const add_user(std::string username);
 
-//    bool find_location(std::string &wanted_location);
-
     const std::vector<std::string>& get_location_list();
 
+private:
+    int location_position(std::string& location_name);
 };
 
 

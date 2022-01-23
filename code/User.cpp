@@ -34,7 +34,7 @@ void User::get_measurements_list() const {
 }
 
 void User::add_location(std::string &location) {
-
+    m_user_locations.emplace_back(location);
 }
 
 //int User::subscribeLocation(const std::string location) {
