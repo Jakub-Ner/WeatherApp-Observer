@@ -29,7 +29,10 @@ Hi!
             log_in();
             if ((*m_current_user).get_name() == "null") {
                 m_current_user = m_csi->add_user(string_input);
-            } else welcome();
+            } else{
+                std::cout<<"\nThis username is already in use. Try be more creative :)\n";
+                welcome();
+            }
             break;
 
         case welcome_options::log_in:
