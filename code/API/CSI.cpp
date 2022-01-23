@@ -1,10 +1,12 @@
+#include <algorithm>
+#include <iostream>
+
 #include "CSI.h"
 #include "../functions.h"
-
-template<typename T>
-int location_position(std::vector<T> &list, T &item) {
-    return std::find(list.begin(), list.end(), item) - list.begin();
-}
+#include "../locations/locations/Krakow.h"
+#include "../locations/locations/Opole.h"
+#include "../locations/locations/Siechnice.h"
+#include "../locations/locations/Wroclaw.h"
 
 CSI::CSI() {
     m_user_list.reserve(3);

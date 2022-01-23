@@ -1,11 +1,9 @@
 #ifndef WEATHERAPP_USER_H
 #define WEATHERAPP_USER_H
 
-
 #include <string>
 #include <vector>
 #include "Measurement.h"
-//#include "locations/Location.h"
 
 enum result_of_subscription{
     location_not_found = 0, location_on_user_list, location_available

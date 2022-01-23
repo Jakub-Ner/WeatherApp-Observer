@@ -1,6 +1,5 @@
 #ifndef UNTITLED_MENU_H
 #define UNTITLED_MENU_H
-#include "iostream"
 #include "KUPA.h"
 enum welcome_options{
     create_account = 1, log_in

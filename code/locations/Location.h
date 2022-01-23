@@ -1,10 +1,8 @@
 #ifndef WEATHERAPP_LOCATION_H
 #define WEATHERAPP_LOCATION_H
 
-#include <iostream>
 #include <vector>
 #include "../User.h"
-#include "../functions.h"
 
 class Location {
     std::string m_location_name;

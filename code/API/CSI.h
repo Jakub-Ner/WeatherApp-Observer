@@ -1,17 +1,9 @@
 #ifndef WEATHERAPP_CSI_H
 #define WEATHERAPP_CSI_H
 
-#include <algorithm>
-#include <iostream>
-#include <vector>
-
-#include "../User.h"
 #include "../locations/Location.h"
-#include "../locations/locations/Krakow.h"
-#include "../locations/locations/Opole.h"
-#include "../locations/locations/Siechnice.h"
-#include "../locations/locations/Wroclaw.h"
-
+#include "../User.h"
+#include <vector>
 
 class CSI {
     std::vector<User> m_user_list;

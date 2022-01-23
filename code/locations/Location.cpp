@@ -1,5 +1,6 @@
 #include "Location.h"
-
+#include <iostream>
+#include "../functions.h"
 
 
 Location::Location(std::string &&location_name)
