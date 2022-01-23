@@ -65,4 +65,3 @@ bool CSI::remove_user_from_location(User &user, std::string unsub_location) {
     return m_location_list[position]->remove(user);
 }
 
-

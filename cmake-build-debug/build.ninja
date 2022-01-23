@@ -144,12 +144,6 @@ build CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o: CXX_COMPIL
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code/locations/locations
 
-build CMakeFiles/untitled.dir/code/functions.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/code/functions.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/code/functions.cpp.o.d
-  FLAGS = -g -std=gnu++17
-  OBJECT_DIR = CMakeFiles/untitled.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target untitled
@@ -158,7 +152,7 @@ build CMakeFiles/untitled.dir/code/functions.cpp.o: CXX_COMPILER__untitled_Debug
 #############################################
 # Link the executable untitled
 
-build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/code/app/Menu.cpp.o CMakeFiles/untitled.dir/code/app/KUPA.cpp.o CMakeFiles/untitled.dir/code/User.cpp.o CMakeFiles/untitled.dir/code/API/CSI.cpp.o CMakeFiles/untitled.dir/code/locations/Location.cpp.o CMakeFiles/untitled.dir/shit.cpp.o CMakeFiles/untitled.dir/code/Measurement.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Siechnice.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Opole.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Krakow.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o CMakeFiles/untitled.dir/code/functions.cpp.o
+build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/code/app/Menu.cpp.o CMakeFiles/untitled.dir/code/app/KUPA.cpp.o CMakeFiles/untitled.dir/code/User.cpp.o CMakeFiles/untitled.dir/code/API/CSI.cpp.o CMakeFiles/untitled.dir/code/locations/Location.cpp.o CMakeFiles/untitled.dir/shit.cpp.o CMakeFiles/untitled.dir/code/Measurement.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Siechnice.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Opole.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Krakow.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/untitled.dir
   POST_BUILD = :

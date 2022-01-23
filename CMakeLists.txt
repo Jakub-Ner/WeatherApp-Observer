@@ -9,4 +9,4 @@ add_executable(untitled main.cpp
         code/locations/locations/Opole.cpp code/locations/locations/Opole.h
         code/locations/locations/Krakow.cpp code/locations/locations/Krakow.h
         code/locations/locations/Wroclaw.cpp code/locations/locations/Wroclaw.h
-        code/functions.cpp code/functions.h)
+        code/functions.h)
