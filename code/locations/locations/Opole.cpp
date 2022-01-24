@@ -2,11 +2,11 @@
 
 
 Opole::Opole()
-        : Location("Opole") {}
+        : Location("Opole") {
+    m_sensors = new Measurement(10, 11, {});
 
-Measurement Opole::get_measurement() {
-    sensors.set_new_measurements();
-    return sensors;
+
 }
+
 
 

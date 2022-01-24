@@ -1,6 +1,4 @@
 #include <algorithm>
-#include <iostream>
-
 #include "CSI.h"
 #include "../functions.h"
 #include "../locations/locations/Krakow.h"
@@ -26,6 +24,19 @@ CSI::CSI() {
 
 }
 
+void CSI::run() {
+    std::this_thread::sleep_for(std::chrono::seconds(5));
+    std::lock_guard<std::mutex> guard(synchronize_list);
+
+    for (int i = 0; i < m_location_list.size(); i++) {
+        for (int j = 0; j < m_location_list[i]->get_user_list().size(); j++) {
+            m_location_list[i]->get_user_list()[j]\
+            ->add_measurements(m_location_list[i]->get_measurement());
+        }
+    }
+}
+
+
 User *const CSI::log_in(const std::string &username) {
     for (int i = 0; i < m_user_list.size(); i++) {
         if (m_user_list[i]->get_name() == username) {
@@ -41,12 +52,12 @@ User *const CSI::add_user(std::string username) {
     return m_user_list.back();
 }
 
-
 const std::vector<std::string> &CSI::get_location_list() {
     return m_location_list_for_others;
 }
 
 CSI::~CSI() {
+    std::lock_guard<std::mutex> guard(synchronize_list);
     for (int i = 0; i < m_location_list.size(); i++)
         delete m_location_list[i];
 }
@@ -55,6 +66,7 @@ bool CSI::add_user_to_location(User *user, std::string &wanted_location) {
     int position = locate_position(m_location_list_for_others, wanted_location);
     if (position > m_location_list.size())
         return false;
+    std::lock_guard<std::mutex> guard(synchronize_list);
     m_location_list[position]->add_user(user);
     return true;
 }
@@ -63,6 +75,7 @@ bool CSI::remove_user_from_location(User *user, std::string unsub_location) {
     int position = locate_position(m_location_list_for_others, unsub_location);
     if (position > m_location_list.size())
         return false;
+    std::lock_guard<std::mutex> guard(synchronize_list);
     return m_location_list[position]->remove(user);
 }
 

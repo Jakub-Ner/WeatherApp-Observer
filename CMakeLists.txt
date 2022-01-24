@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.21)
 project(WeatherApp)
 
 set(CMAKE_CXX_STANDARD 17)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
 add_executable(untitled main.cpp
         code/app/Menu.cpp code/app/Menu.h code/app/KUPA.cpp code/app/KUPA.h code/User.cpp code/User.h code/API/CSI.cpp code/API/CSI.h code/locations/Location.cpp code/locations/Location.h shit.cpp shit.h code/Measurement.cpp code/Measurement.h

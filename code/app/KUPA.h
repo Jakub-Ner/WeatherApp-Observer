@@ -9,9 +9,12 @@
 class KUPA {
 protected:
     std::string string_input;
-    CSI *m_csi = new CSI();
+    CSI *m_csi;
     User *m_current_user;
+    std::thread csi_thread;
+    bool turn_on = true;
 public:
+    KUPA();
 
 protected:
     void save_measurements();

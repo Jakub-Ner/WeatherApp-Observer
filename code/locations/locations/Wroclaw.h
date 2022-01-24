@@ -5,11 +5,8 @@
 #include "../../Measurement.h"
 
 class Wroclaw : public Location {
-public: Measurement sensors = {18.1, 70.2, true};
-
 public:
     Wroclaw();
 
-    Measurement get_measurement();
 };
 #endif //WEATHERAPP_WROCLAW_H

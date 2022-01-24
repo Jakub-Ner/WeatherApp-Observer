@@ -5,11 +5,9 @@
 #include "../../Measurement.h"
 
 class Krakow : public Location {
-public: Measurement sensors = {{}, 83.2, true};
-
 public:
     Krakow();
-    ~Krakow(){" papa krakow ";}
-    Measurement get_measurement();
+    ~Krakow() { " papa krakow "; }
 };
+
 #endif //WEATHERAPP_KRAKOW_H

@@ -24,3 +24,12 @@ std::string& Location::get_location_name() {
 Location::~Location() {
     std::cout<<" location died \n";
 }
+
+Measurement * Location::get_measurement() {
+    m_sensors->set_new_measurements();
+    return m_sensors;
+}
+
+const std::vector<User*> &Location::get_user_list() {
+    return m_user_list;
+}

@@ -2,11 +2,10 @@
 
 
 Krakow::Krakow()
-        : Location("Krakow") {}
-
-Measurement Krakow::get_measurement() {
-    sensors.set_new_measurements();
-    return sensors;
+        : Location("Krakow") {
+    m_sensors = new Measurement(10, 11, {});
 }
+
+
 
 

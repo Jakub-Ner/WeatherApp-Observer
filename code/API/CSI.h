@@ -4,11 +4,14 @@
 #include "../locations/Location.h"
 #include "../User.h"
 #include <vector>
+#include <mutex>
+#include <thread>
 
 class CSI {
     std::vector<User*> m_user_list;
     std::vector<Location *> m_location_list;
     std::vector<std::string> m_location_list_for_others;
+    std::mutex synchronize_list;
 public:
     CSI();
 
@@ -21,7 +24,7 @@ public:
     const std::vector<std::string>& get_location_list();
 
     bool remove_user_from_location(User *user, std::string basicString);
-
+    void run();
 private:
 };
 #endif //WEATHERAPP_CSI_H

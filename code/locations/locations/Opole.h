@@ -5,11 +5,8 @@
 #include "../../Measurement.h"
 
 class Opole : public Location {
-public: Measurement sensors = {21.1, 13.2, {}};
-
 public:
     Opole();
 
-    Measurement get_measurement();
 };
 #endif //WEATHERAPP_OPOLE_H

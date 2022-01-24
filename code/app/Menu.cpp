@@ -1,13 +1,15 @@
 #include <iostream>
+#include <iomanip>
 
 #include "Menu.h"
 #include "KUPA.h"
 
 void Menu::menu() {
     welcome();
-    while (true) {
+    while (turn_on) {
         main_menu();
     }
+    csi_thread.join();
 }
 
 void Menu::welcome() {
@@ -29,8 +31,8 @@ Hi!
             log_in();
             if ((*m_current_user).get_name() == "null") {
                 m_current_user = m_csi->add_user(string_input);
-            } else{
-                std::cout<<"\nThis username is already in use. Try be more creative :)\n";
+            } else {
+                std::cout << "\nThis username is already in use. Try be more creative :)\n";
                 welcome();
             }
             break;
@@ -62,10 +64,11 @@ main_options:
 [4]-unsubscribe location
 [5]-save measurements in .json file
 [6]-Log out
+[7]-turn off
 )";
     short short_input;
     KUPA::take_short_input(short_input);
-    while (short_input < 1 || short_input > main_options::log_out) {
+    while (short_input < 1 || short_input > main_options::turn_off) {
         std::cout << "Input int value out of: 1,2,3,4,5,6\n";
         KUPA::take_short_input(short_input);
     }
@@ -75,7 +78,7 @@ main_options:
             break;
 
         case main_options::display_measurements:
-            KUPA::m_current_user->get_measurements_list();
+            display_measurement(m_current_user->get_measurements_list());
             break;
 
         case main_options::sub_new_location:
@@ -92,9 +95,35 @@ main_options:
 
         case main_options::log_out:
             menu();
+
+        case main_options::turn_off:
+            turn_on = false;
+            break;
     }
 }
 
+void Menu::display_measurement(std::vector<Measurement *> measurement_list) {
+    std::cout << std::setprecision(2) << std::fixed;
+    for (int i = 0; i < measurement_list.size(); i++) {
+        try {
+            std::cout << "\"m_temperature\":" << measurement_list[i]->m_temperature.value() << ",";
+        } catch (const std::bad_optional_access &e) {
+            std::cout << "\"" << e.what() << "\",";
+        }
 
+        try {
+            std::cout << "\"m_humidity\":" << measurement_list[i]->m_humidity.value() << ",";
+        } catch (const std::bad_optional_access &e) {
+            std::cout << "\"" << e.what() << "\",";
+        }
+
+        try {
+            std::cout << "\"m_cloudy\":" << measurement_list[i]->m_cloudy.value();
+        } catch (const std::bad_optional_access &e) {
+            std::cout << "\"" << e.what() << "\"";
+        }
+        std::cout<<"\n";
+    }
+}
 
 

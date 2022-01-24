@@ -2,11 +2,10 @@
 
 
 Siechnice::Siechnice()
-        : Location("Siechnice") {}
+        : Location("Siechnice") {
+    m_sensors = new Measurement(19, 71, false);
 
-Measurement Siechnice::get_measurement() {
-    sensors.set_new_measurements();
-    return sensors;
 }
+
 
 

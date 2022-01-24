@@ -15,11 +15,11 @@ public:
 
     std::optional<bool> m_cloudy;
 
-    Measurement(std::optional<float> temperature,
-                std::optional<float> humidity, std::optional<bool> cloudy);
+    Measurement(std::optional<float>&& temperature,
+                std::optional<float>&& humidity, std::optional<bool>&& cloudy);
 
     void set_new_measurements();
-    void display_measurement();
+//    void display_measurement();
 };
 
 

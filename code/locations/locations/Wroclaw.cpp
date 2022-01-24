@@ -2,11 +2,8 @@
 
 
 Wroclaw::Wroclaw()
-        : Location("Wroclaw") {}
-
-Measurement Wroclaw::get_measurement() {
-    sensors.set_new_measurements();
-    return sensors;
+        : Location("Wroclaw") {
+    m_sensors = new Measurement(19, 71, false);
 }
 
 

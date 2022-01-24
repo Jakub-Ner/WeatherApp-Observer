@@ -26,26 +26,17 @@ const std::string &User::get_name() const {
 }
 
 
-void User::add_measurements(const Measurement &measurement) const {
-
+void User::add_measurements(Measurement* measurement) {
+    m_measurement_list.emplace_back(measurement);
 }
 
-void User::get_measurements_list() const {
-
+std::vector<Measurement*> User::get_measurements_list(){
+    return m_measurement_list;
 }
 
 void User::add_location(std::string &location) {
     m_user_locations.emplace_back(location);
 }
-
-//int User::subscribeLocation(const std::string location) {
-//
-//}
-//
-//
-//int User::unsubscribeLocation(const std::string location) {
-//    return false;
-//}
 
 const std::vector<std::string> &User::get_available_locations() const {
     return m_available_locations;

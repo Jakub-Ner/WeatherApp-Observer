@@ -1,6 +1,17 @@
 #include <iostream>
+#include <thread>
 #include "KUPA.h"
 
+
+KUPA::KUPA() {
+    m_csi= new CSI();
+    csi_thread = std::thread([&](){
+        while(turn_on){
+            m_csi->run();
+        }
+    });
+
+}
 
 void KUPA::save_measurements() {
     std::cout << ("Name your file");
