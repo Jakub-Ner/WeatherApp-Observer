@@ -70,7 +70,8 @@ void UserApp::subscribe_location() {
 }
 
 void UserApp::take_string_input() {
-    std::cin >> string_input;
+    std::cin.ignore();
+    std::getline(std::cin, string_input);
     while (string_input == "null") {
         std::cout << "\nInvalid input\n";
         std::cin >> string_input;

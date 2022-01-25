@@ -57,7 +57,7 @@ void Menu::log_in() {
 void Menu::main_menu() {
     std::cout << R"(
 
-main_options:
+available options:
 [1]-display locations
 [2]-display your measurements
 [3]-subscribe new location
