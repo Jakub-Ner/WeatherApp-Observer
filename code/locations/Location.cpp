@@ -25,8 +25,12 @@ Location::~Location() {
     std::cout<<" location died \n";
 }
 
-Measurement * Location::get_measurement() {
+Measurement * Location::set_measurement() {
     m_sensors->set_new_measurements();
+    return m_sensors;
+}
+
+Measurement * Location::get_measurement() {
     return m_sensors;
 }
 

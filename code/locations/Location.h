@@ -22,8 +22,9 @@ public:
     const std::vector<User*>& get_user_list();
 
     bool remove(User* user);
-    Measurement * get_measurement();
+    Measurement * set_measurement();
 
+    Measurement *get_measurement();
 };
 
 #endif //WEATHERAPP_LOCATION_H

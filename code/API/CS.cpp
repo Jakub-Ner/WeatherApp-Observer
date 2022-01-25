@@ -8,7 +8,7 @@
 
 CS::CS() {
     m_user_list.reserve(3);
-    m_user_list.emplace_back(new User("null"));
+    m_user_list.emplace_back(new User("null")); // <- "null" user
 
     int locations_number = 4;
     m_location_list.reserve(locations_number);
@@ -24,18 +24,26 @@ CS::CS() {
 
 }
 
+CS::~CS() {
+    std::lock_guard<std::mutex> guard(synchronize_list);
+    for (int i = 0; i < m_location_list.size(); i++)
+        delete m_location_list[i];
+}
+
+
 void CS::run() {
     std::this_thread::sleep_for(std::chrono::seconds(5));
     std::lock_guard<std::mutex> guard(synchronize_list);
 
     for (int i = 0; i < m_location_list.size(); i++) {
+        m_location_list[i]->set_measurement();
         for (int j = 0; j < m_location_list[i]->get_user_list().size(); j++) {
+       ////  add measurement to list of each user
             m_location_list[i]->get_user_list()[j]\
             ->add_measurements(m_location_list[i]->get_measurement());
         }
     }
 }
-
 
 User *const CS::log_in(const std::string &username) {
     for (int i = 0; i < m_user_list.size(); i++) {
@@ -43,23 +51,14 @@ User *const CS::log_in(const std::string &username) {
             return m_user_list[i];
         }
     }
-    return m_user_list[0];
+    return m_user_list[0]; // <- "null" user
 }
 
-User *const CS::add_user(std::string username) {
+
+User *const CS::add_user_and_give_him_location_list(std::string& username) {
     m_user_list.emplace_back(new User(username));
     m_user_list.back()->set_available_locations(m_location_list_for_others);
     return m_user_list.back();
-}
-
-const std::vector<std::string> &CS::get_location_list() {
-    return m_location_list_for_others;
-}
-
-CS::~CS() {
-    std::lock_guard<std::mutex> guard(synchronize_list);
-    for (int i = 0; i < m_location_list.size(); i++)
-        delete m_location_list[i];
 }
 
 bool CS::add_user_to_location(User *user, std::string &wanted_location) {
@@ -71,7 +70,7 @@ bool CS::add_user_to_location(User *user, std::string &wanted_location) {
     return true;
 }
 
-bool CS::remove_user_from_location(User *user, std::string unsub_location) {
+bool CS::remove_user_from_location(User *user, std::string& unsub_location) {
     int position = locate_position(m_location_list_for_others, unsub_location);
     if (position > m_location_list.size())
         return false;

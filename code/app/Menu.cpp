@@ -30,7 +30,7 @@ Hi!
             std::cout << "\nSet your username\n";
             log_in();
             if ((*m_current_user).get_name() == "null") {
-                m_current_user = m_csi->add_user(string_input);
+                m_current_user = m_csi->add_user_and_give_him_location_list(string_input);
             } else {
                 std::cout << "\nThis username is already in use. Try be more creative :)\n";
                 welcome();
