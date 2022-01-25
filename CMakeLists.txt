@@ -2,13 +2,12 @@ cmake_minimum_required(VERSION 3.21)
 project(WeatherApp)
 
 set(CMAKE_CXX_STANDARD 17)
-#SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
 
 include(FetchContent)
 FetchContent_Declare(
         googletest
-        # Specify the commit you depend on and update it regularly.
         URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
@@ -24,5 +23,3 @@ add_executable(untitled main.cpp
 
 target_link_libraries(untitled gtest_main)
 add_test(NAME test COMMAND untitled)
-## Now simply link against gtest or gtest_main as needed. Eg
-#add_test(NAME example_test COMMAND example)
