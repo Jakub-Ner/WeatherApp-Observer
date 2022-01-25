@@ -1,12 +1,11 @@
 #ifndef WEATHERAPP_SHIT_H
 #define WEATHERAPP_SHIT_H
 
-#include "shit.h"
 #include <iostream>
 #include <string>
-#include <filesystem>
 
 
+int Factorial(int n);
 void shit();
 
 

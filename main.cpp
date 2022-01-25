@@ -1,8 +1,10 @@
-#include <iostream>
+#include <gtest/gtest.h>
 #include "code/app/Menu.h"
 
 int main() {
-    Menu().menu();
+    ::testing::InitGoogleTest();
+    RUN_ALL_TESTS();
+
+//    Menu().menu();
 
 }
-
