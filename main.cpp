@@ -6,5 +6,4 @@ int main() {
 //    RUN_ALL_TESTS();
 
     Menu().menu();
-
 }

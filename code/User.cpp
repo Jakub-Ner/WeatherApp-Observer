@@ -27,10 +27,10 @@ const std::string &User::get_name() const {
 
 
 void User::add_measurements(Measurement *measurement) {
-    m_measurement_list.emplace_back(measurement);
+    m_measurement_list.emplace_back(*measurement);
 }
 
-std::vector<Measurement *> User::get_measurements_list() {
+std::vector<Measurement> User::get_measurements_list() {
     return m_measurement_list;
 }
 

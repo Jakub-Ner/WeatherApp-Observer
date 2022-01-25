@@ -6,6 +6,7 @@
 struct Measurement {
 private:
     int m_counter;
+    std::string m_location;
     std::optional<float> m_temperature;
     std::optional<float> m_humidity;
     std::optional<bool> m_cloudy;
@@ -13,11 +14,14 @@ private:
     float m_mean_humidity;
 
 public:
-    Measurement(std::optional<float> &&temperature,
+    Measurement(std::string location,
+                std::optional<float> &&temperature,
                 std::optional<float> &&humidity,
                 std::optional<bool> &&cloudy);
 
     void set_new_measurements();
+
+    const std::string &get_location() const;
 
     const std::optional<float> &get_temperature() const;
 

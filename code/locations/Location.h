@@ -7,13 +7,14 @@
 
 
 class Location {
-    std::string m_location_name;
     std::vector<User *> m_user_list;
 protected:
     Measurement *m_sensors;
 
+    std::string m_location_name;
 protected:
     Location(std::string &&location_name);
+
 public:
     virtual ~Location() = 0;
 

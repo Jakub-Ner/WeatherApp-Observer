@@ -10,6 +10,7 @@ UserApp::UserApp() {
         while (m_turn_on) {
             m_csi->run();
         }
+        delete m_csi;
     });
 }
 

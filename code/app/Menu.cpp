@@ -10,8 +10,6 @@ void Menu::menu() {
         main_menu();
     }
     m_csi_thread.join();
-    delete m_csi;
-    m_csi_thread.join();
 }
 
 void Menu::welcome() {
@@ -99,23 +97,24 @@ available options:
     }
 }
 
-void Menu::display_measurement(std::vector<Measurement *> measurement_list) {
+void Menu::display_measurement(std::vector<Measurement> measurement_list) {
     std::cout << std::setprecision(2) << std::fixed;
     for (int i = 0; i < measurement_list.size(); i++) {
+        std::cout << "\"location\":" << measurement_list[i].get_location() << ",";
         try {
-            std::cout << "\"m_temperature\":" << measurement_list[i]->get_temperature().value() << ",";
+            std::cout << "\"m_temperature\":" << measurement_list[i].get_temperature().value() << ",";
         } catch (const std::bad_optional_access &e) {
             std::cout << "\"" << e.what() << "\",";
         }
 
         try {
-            std::cout << "\"m_humidity\":" << measurement_list[i]->get_humidity().value() << ",";
+            std::cout << "\"m_humidity\":" << measurement_list[i].get_humidity().value() << ",";
         } catch (const std::bad_optional_access &e) {
             std::cout << "\"" << e.what() << "\",";
         }
 
         try {
-            std::cout << "\"m_cloudy\":" << measurement_list[i]->get_cloudy().value();
+            std::cout << "\"m_cloudy\":" << measurement_list[i].get_cloudy().value();
         } catch (const std::bad_optional_access &e) {
             std::cout << "\"" << e.what() << "\"";
         }

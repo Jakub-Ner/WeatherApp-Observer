@@ -21,7 +21,7 @@ private:
 
     void log_in();
 
-    void display_measurement(std::vector<Measurement *> measurement_list);
+    void display_measurement(std::vector<Measurement> measurement_list);
 };
 
 

@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <iostream>
 #include "CS.h"
 #include "../functions.h"
 #include "../locations/locations/Krakow.h"
@@ -29,7 +30,7 @@ CS::~CS() {
     for (int i = 0; i < m_location_list.size(); i++)
         delete m_location_list[i];
 
-    for(int i =0; i<m_user_list.size();i++)
+    for (int i = 0; i < m_user_list.size(); i++)
         delete m_user_list[i];
 }
 

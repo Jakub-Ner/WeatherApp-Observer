@@ -8,6 +8,7 @@ Location::Location(std::string &&location_name)
 
 Location::~Location() {
     delete m_sensors;
+    std::cout << " sensor died ";
 }
 
 void Location::add_user(User *user) {
