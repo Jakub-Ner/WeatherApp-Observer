@@ -1,6 +1,6 @@
 #ifndef UNTITLED_MENU_H
 #define UNTITLED_MENU_H
-#include "KUPA.h"
+#include "UserApp.h"
 enum welcome_options{
     create_account = 1, log_in
 };
@@ -8,10 +8,10 @@ enum main_options{
     display_locations = 1, display_measurements, sub_new_location, unsub_location, save_data, log_out, turn_off
 };
 
-class Menu : public KUPA{
+class Menu : public UserApp{
 private:
 public:
-    [[noreturn]] void menu();
+void menu();
 
 private:
     void welcome();

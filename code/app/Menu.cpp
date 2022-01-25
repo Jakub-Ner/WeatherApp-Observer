@@ -2,7 +2,7 @@
 #include <iomanip>
 
 #include "Menu.h"
-#include "KUPA.h"
+#include "UserApp.h"
 
 void Menu::menu() {
     welcome();
@@ -67,14 +67,14 @@ main_options:
 [7]-turn off
 )";
     short short_input;
-    KUPA::take_short_input(short_input);
+    UserApp::take_short_input(short_input);
     while (short_input < 1 || short_input > main_options::turn_off) {
         std::cout << "Input int value out of: 1,2,3,4,5,6\n";
-        KUPA::take_short_input(short_input);
+        UserApp::take_short_input(short_input);
     }
     switch (short_input) {
         case main_options::display_locations:
-            KUPA::display_locations();
+            UserApp::display_locations();
             break;
 
         case main_options::display_measurements:
@@ -82,15 +82,15 @@ main_options:
             break;
 
         case main_options::sub_new_location:
-            KUPA::subscribe_location();
+            UserApp::subscribe_location();
             break;
 
         case main_options::unsub_location:
-            KUPA::unsubscribe_location();
+            UserApp::unsubscribe_location();
             break;
 
         case main_options::save_data:
-            KUPA::save_measurements();
+            UserApp::save_measurements();
             break;
 
         case main_options::log_out:

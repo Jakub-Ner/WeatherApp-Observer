@@ -84,8 +84,8 @@ build CMakeFiles/untitled.dir/code/app/Menu.cpp.o: CXX_COMPILER__untitled_Debug 
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code/app
 
-build CMakeFiles/untitled.dir/code/app/KUPA.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/code/app/KUPA.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/code/app/KUPA.cpp.o.d
+build CMakeFiles/untitled.dir/code/app/UserApp.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/code/app/UserApp.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/code/app/UserApp.cpp.o.d
   FLAGS = -pthread -g -std=gnu++17
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code/app
@@ -96,8 +96,8 @@ build CMakeFiles/untitled.dir/code/User.cpp.o: CXX_COMPILER__untitled_Debug /hom
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code
 
-build CMakeFiles/untitled.dir/code/API/CSI.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/code/API/CSI.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/code/API/CSI.cpp.o.d
+build CMakeFiles/untitled.dir/code/API/CS.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/code/API/CS.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/code/API/CS.cpp.o.d
   FLAGS = -pthread -g -std=gnu++17
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code/API
@@ -144,6 +144,12 @@ build CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o: CXX_COMPIL
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir/code/locations/locations
 
+build CMakeFiles/untitled.dir/Tests/main.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/Tests/main.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/Tests/main.cpp.o.d
+  FLAGS = -pthread -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles/untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled.dir/Tests
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target untitled
@@ -152,7 +158,7 @@ build CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o: CXX_COMPIL
 #############################################
 # Link the executable untitled
 
-build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/code/app/Menu.cpp.o CMakeFiles/untitled.dir/code/app/KUPA.cpp.o CMakeFiles/untitled.dir/code/User.cpp.o CMakeFiles/untitled.dir/code/API/CSI.cpp.o CMakeFiles/untitled.dir/code/locations/Location.cpp.o CMakeFiles/untitled.dir/shit.cpp.o CMakeFiles/untitled.dir/code/Measurement.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Siechnice.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Opole.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Krakow.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o
+build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/code/app/Menu.cpp.o CMakeFiles/untitled.dir/code/app/UserApp.cpp.o CMakeFiles/untitled.dir/code/User.cpp.o CMakeFiles/untitled.dir/code/API/CS.cpp.o CMakeFiles/untitled.dir/code/locations/Location.cpp.o CMakeFiles/untitled.dir/shit.cpp.o CMakeFiles/untitled.dir/code/Measurement.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Siechnice.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Opole.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Krakow.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o CMakeFiles/untitled.dir/Tests/main.cpp.o
   FLAGS = -pthread -g
   OBJECT_DIR = CMakeFiles/untitled.dir
   POST_BUILD = :
@@ -180,14 +186,14 @@ build all: phony untitled
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/FetchContent.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/FetchContent.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/178/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################
