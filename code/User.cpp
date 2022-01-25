@@ -3,11 +3,13 @@
 #include "User.h"
 #include "functions.h"
 
+int User::m_dont_care = 0;
+
 User::User(const std::string &name)
         : m_name(name) {
-    if (dont_care != 0) {
+    if (m_dont_care != 0) {
         std::cout << "\n Welcome " << m_name << "!\n";
-    } else dont_care = 1;
+    } else m_dont_care = 1;
 }
 
 User::User(const User &other)
@@ -16,21 +18,19 @@ User::User(const User &other)
 }
 
 User::~User() {
-    std::cout << "\nBye bye " << m_name << "!\n";
+    std::cout << "\nBye bye " << m_name << "!";
 }
-
-int User::dont_care = 0;
 
 const std::string &User::get_name() const {
     return m_name;
 }
 
 
-void User::add_measurements(Measurement* measurement) {
+void User::add_measurements(Measurement *measurement) {
     m_measurement_list.emplace_back(measurement);
 }
 
-std::vector<Measurement*> User::get_measurements_list(){
+std::vector<Measurement *> User::get_measurements_list() {
     return m_measurement_list;
 }
 
@@ -42,8 +42,8 @@ const std::vector<std::string> &User::get_available_locations() const {
     return m_available_locations;
 }
 
-void User::set_available_locations(const std::vector<std::string> &mStringLocationList) {
-    m_available_locations = mStringLocationList;
+void User::set_available_locations(const std::vector<std::string> &location_list_for_others) {
+    m_available_locations = location_list_for_others;
 }
 
 const std::vector<std::string> &User::get_user_locations() const {
@@ -51,15 +51,15 @@ const std::vector<std::string> &User::get_user_locations() const {
 }
 
 int User::find_location(std::string &wanted_location) {
-        if (std::any_of(m_user_locations.begin(),
-                        m_user_locations.end(),
-                        [&](std::string& loc){return loc == wanted_location;})) {
-            return location_on_user_list;
-        }
+    if (std::any_of(m_user_locations.begin(),
+                    m_user_locations.end(),
+                    [&](std::string &loc) { return loc == wanted_location; })) {
+        return location_on_user_list;
+    }
 
     if (std::any_of(m_available_locations.begin(),
                     m_available_locations.end(),
-                    [&](std::string& loc){return loc == wanted_location;})) {
+                    [&](std::string &loc) { return loc == wanted_location; })) {
         return location_available;
     }
     return location_not_found;
@@ -68,7 +68,7 @@ int User::find_location(std::string &wanted_location) {
 
 bool User::remove_location_from_list(std::string location) {
     int position = locate_position(m_user_locations, location);
-    if(position > m_user_locations.size()) return false;
+    if (position > m_user_locations.size()) return false;
     m_user_locations.erase(m_user_locations.begin() + position);
     return true;
 }

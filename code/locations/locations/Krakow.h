@@ -7,7 +7,8 @@
 class Krakow : public Location {
 public:
     Krakow();
-    ~Krakow() { " papa krakow "; }
+
+    ~Krakow();
 };
 
 #endif //WEATHERAPP_KRAKOW_H

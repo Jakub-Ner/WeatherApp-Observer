@@ -8,23 +8,23 @@
 
 class UserApp {
 protected:
-    std::string string_input;
+    std::string m_string_input;
     CS *m_csi;
     User *m_current_user;
-    std::thread csi_thread;
-    bool turn_on = true;
+    std::thread m_csi_thread;
+    bool m_turn_on = true;
+
 public:
     UserApp();
 
 protected:
-    void save_measurements();
-
     void subscribe_location();
 
     void unsubscribe_location();
+
     void display_locations() const;
-    void display(const std::vector<std::string>& list) const;
-    void admin_log();
+
+    void display(const std::vector<std::string> &list) const;
 
     void take_string_input();
 

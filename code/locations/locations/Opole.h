@@ -8,5 +8,7 @@ class Opole : public Location {
 public:
     Opole();
 
+    ~Opole();
 };
+
 #endif //WEATHERAPP_OPOLE_H

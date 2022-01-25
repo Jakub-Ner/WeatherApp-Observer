@@ -1,28 +1,39 @@
-#include <iostream>
-#include <iomanip>
 #include "Measurement.h"
 
-using std::optional;
-
-Measurement::Measurement(optional<float>&& temperature, optional<float>&& humidity, optional<bool>&& cloudy)
+#define o std::optional
+Measurement::Measurement(o<float> &&temperature, o<float> &&humidity, o<bool> &&cloudy)
         : m_temperature(temperature), m_humidity(humidity), m_cloudy(cloudy) {
     srand(time(NULL));
     if (m_humidity) m_mean_humidity = m_humidity.value();
     if (m_temperature) m_mean_temperature = m_temperature.value();
-    counter = 0;
+    m_counter = 0;
 }
+#undef o
+
 
 void Measurement::set_new_measurements() {
-    counter++;
+    m_counter++;
     if (m_cloudy) m_cloudy = rand() % 4 <= 1;
 
     if (m_humidity) {
         m_humidity.value() += (5 - rand() % 10) * m_mean_humidity / 20;
-        m_mean_humidity = m_mean_humidity + m_humidity.value() / counter;
+        m_mean_humidity = m_mean_humidity + m_humidity.value() / m_counter;
     }
     if (m_temperature) {
         m_temperature.value() += (5 - rand() % 10) * m_mean_temperature / 20;;
-        m_mean_temperature = m_mean_temperature + m_temperature.value() / counter;
+        m_mean_temperature = m_mean_temperature + m_temperature.value() / m_counter;
     }
+}
+
+const std::optional<float> &Measurement::get_temperature() const {
+    return m_temperature;
+}
+
+const std::optional<float> &Measurement::get_humidity() const {
+    return m_humidity;
+}
+
+const std::optional<bool> &Measurement::get_cloudy() const {
+    return m_cloudy;
 }
 

@@ -5,21 +5,25 @@
 
 struct Measurement {
 private:
-    int counter;
-public:
+    int m_counter;
     std::optional<float> m_temperature;
-    float m_mean_temperature;
-
     std::optional<float> m_humidity;
+    std::optional<bool> m_cloudy;
+    float m_mean_temperature;
     float m_mean_humidity;
 
-    std::optional<bool> m_cloudy;
-
-    Measurement(std::optional<float>&& temperature,
-                std::optional<float>&& humidity, std::optional<bool>&& cloudy);
+public:
+    Measurement(std::optional<float> &&temperature,
+                std::optional<float> &&humidity,
+                std::optional<bool> &&cloudy);
 
     void set_new_measurements();
-//    void display_measurement();
+
+    const std::optional<float> &get_temperature() const;
+
+    const std::optional<float> &get_humidity() const;
+
+    const std::optional<bool> &get_cloudy() const;
 };
 
 

@@ -8,5 +8,8 @@ class Siechnice : public Location {
 public:
     Siechnice();
 
+    ~Siechnice();
+
 };
+
 #endif //WEATHERAPP_SIECHNICE_H

@@ -8,5 +8,8 @@ class Wroclaw : public Location {
 public:
     Wroclaw();
 
+    ~Wroclaw();
+
 };
+
 #endif //WEATHERAPP_WROCLAW_H

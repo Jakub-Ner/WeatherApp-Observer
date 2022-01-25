@@ -8,21 +8,25 @@
 
 class Location {
     std::string m_location_name;
-    std::vector<User*> m_user_list;
+    std::vector<User *> m_user_list;
 protected:
-    Location(std::string&& location_name);
-    Measurement* m_sensors;
+    Measurement *m_sensors;
+
+protected:
+    Location(std::string &&location_name);
 public:
-    virtual ~Location();
+    virtual ~Location() = 0;
 
 public:
-    void add_user(User* user);
-    std::string& get_location_name() ;
+    void add_user(User *user);
 
-    const std::vector<User*>& get_user_list();
+    std::string &get_location_name();
 
-    bool remove(User* user);
-    Measurement * set_measurement();
+    const std::vector<User *> &get_user_list();
+
+    bool remove(User *user);
+
+    Measurement *set_measurement();
 
     Measurement *get_measurement();
 };

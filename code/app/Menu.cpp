@@ -6,16 +6,18 @@
 
 void Menu::menu() {
     welcome();
-    while (turn_on) {
+    while (m_turn_on) {
         main_menu();
     }
-    csi_thread.join();
+    m_csi_thread.join();
+    delete m_csi;
+    m_csi_thread.join();
 }
 
 void Menu::welcome() {
     std::cout << R"(
 Hi!
-[1]-create an acount
+[1]-create an account
 [2]-log-in
 )";
     short short_input;
@@ -30,7 +32,7 @@ Hi!
             std::cout << "\nSet your username\n";
             log_in();
             if ((*m_current_user).get_name() == "null") {
-                m_current_user = m_csi->add_user_and_give_him_location_list(string_input);
+                m_current_user = m_csi->add_user_and_give_him_location_list(m_string_input);
             } else {
                 std::cout << "\nThis username is already in use. Try be more creative :)\n";
                 welcome();
@@ -50,7 +52,7 @@ Hi!
 
 void Menu::log_in() {
     take_string_input();
-    m_current_user = m_csi->log_in(string_input);
+    m_current_user = m_csi->log_in(m_string_input);
 }
 
 
@@ -62,9 +64,8 @@ available options:
 [2]-display your measurements
 [3]-subscribe new location
 [4]-unsubscribe location
-[5]-save measurements in .json file
-[6]-Log out
-[7]-turn off
+[5]-Log out
+[6]-turn off
 )";
     short short_input;
     UserApp::take_short_input(short_input);
@@ -89,15 +90,11 @@ available options:
             UserApp::unsubscribe_location();
             break;
 
-        case main_options::save_data:
-            UserApp::save_measurements();
-            break;
-
         case main_options::log_out:
             menu();
 
         case main_options::turn_off:
-            turn_on = false;
+            m_turn_on = false;
             break;
     }
 }
@@ -106,23 +103,23 @@ void Menu::display_measurement(std::vector<Measurement *> measurement_list) {
     std::cout << std::setprecision(2) << std::fixed;
     for (int i = 0; i < measurement_list.size(); i++) {
         try {
-            std::cout << "\"m_temperature\":" << measurement_list[i]->m_temperature.value() << ",";
+            std::cout << "\"m_temperature\":" << measurement_list[i]->get_temperature().value() << ",";
         } catch (const std::bad_optional_access &e) {
             std::cout << "\"" << e.what() << "\",";
         }
 
         try {
-            std::cout << "\"m_humidity\":" << measurement_list[i]->m_humidity.value() << ",";
+            std::cout << "\"m_humidity\":" << measurement_list[i]->get_humidity().value() << ",";
         } catch (const std::bad_optional_access &e) {
             std::cout << "\"" << e.what() << "\",";
         }
 
         try {
-            std::cout << "\"m_cloudy\":" << measurement_list[i]->m_cloudy.value();
+            std::cout << "\"m_cloudy\":" << measurement_list[i]->get_cloudy().value();
         } catch (const std::bad_optional_access &e) {
             std::cout << "\"" << e.what() << "\"";
         }
-        std::cout<<"\n";
+        std::cout << "\n";
     }
 }
 

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Wroclaw.h"
 
 
@@ -6,4 +7,7 @@ Wroclaw::Wroclaw()
     m_sensors = new Measurement(19, 71, false);
 }
 
+Wroclaw::~Wroclaw() {
+    std::cout << " Wroclaw died \n";
+}
 
