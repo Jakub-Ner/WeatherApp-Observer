@@ -9,7 +9,7 @@
 class UserApp {
 protected:
     std::string m_string_input;
-    CS *m_csi;
+    CS *m_cs;
     User *m_current_user;
     std::thread m_csi_thread;
     bool m_turn_on = true;

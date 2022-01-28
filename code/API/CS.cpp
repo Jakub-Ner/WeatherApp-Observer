@@ -27,13 +27,17 @@ CS::CS() {
 
 CS::~CS() {
     std::lock_guard<std::mutex> guard(m_synchronize_list);
-    for (int i = 0; i < m_location_list.size(); i++)
+    for (int i = 0; i < m_location_list.size(); i++) {
         delete m_location_list[i];
+    }
     m_location_list.clear();
+    m_location_list.shrink_to_fit();
 
-    for (int i = 0; i < m_user_list.size(); i++)
+    for (int i = 0; i < m_user_list.size(); i++){
         delete m_user_list[i];
+    }
     m_user_list.clear();
+    m_user_list.shrink_to_fit();
 }
 
 

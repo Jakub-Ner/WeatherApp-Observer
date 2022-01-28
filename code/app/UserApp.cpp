@@ -4,13 +4,13 @@
 
 
 UserApp::UserApp() {
-    m_csi = new CS();
+    m_cs = new CS();
     // launches "server"
     m_csi_thread = std::thread([&]() {
         while (m_turn_on) {
-            m_csi->run();
+            m_cs->run();
         }
-        delete m_csi;
+        delete m_cs;
     });
 }
 
@@ -24,7 +24,7 @@ void UserApp::unsubscribe_location() {
             break;
 
         case result_of_subscription::location_on_user_list:
-            if (m_csi->remove_user_from_location(m_current_user, m_string_input)) {
+            if (m_cs->remove_user_from_location(m_current_user, m_string_input)) {
                 if (m_current_user->remove_location_from_list(m_string_input))
                     std::cout << m_string_input << " has been successfully deleted";
                 else std::cout << "ERROR: could not find location in user list\n";
@@ -32,7 +32,7 @@ void UserApp::unsubscribe_location() {
             break;
 
         case result_of_subscription::location_available:
-            if (m_csi->add_user_to_location(m_current_user, m_string_input)) {
+            if (m_cs->add_user_to_location(m_current_user, m_string_input)) {
                 m_current_user->add_location(m_string_input);
                 std::cout << "Location hadn't been subscribed\n";
             }
@@ -52,7 +52,7 @@ void UserApp::subscribe_location() {
             std::cout << "\nERROR: Location already added";
             break;
         case result_of_subscription::location_available:
-            if (m_csi->add_user_to_location(m_current_user, m_string_input)) {
+            if (m_cs->add_user_to_location(m_current_user, m_string_input)) {
                 m_current_user->add_location(m_string_input);
                 std::cout << "\nAdded location :)\n";
             } else std::cout << "\nERROR: Could not found Location in CS";

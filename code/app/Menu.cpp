@@ -30,7 +30,7 @@ Hi!
             std::cout << "\nSet your username\n";
             log_in();
             if ((*m_current_user).get_name() == "null") {
-                m_current_user = m_csi->add_user_and_give_him_location_list(m_string_input);
+                m_current_user = m_cs->add_user_and_give_him_location_list(m_string_input);
             } else {
                 std::cout << "\nThis username is already in use. Try be more creative :)\n";
                 welcome();
@@ -50,7 +50,7 @@ Hi!
 
 void Menu::log_in() {
     take_string_input();
-    m_current_user = m_csi->log_in(m_string_input);
+    m_current_user = m_cs->log_in(m_string_input);
 }
 
 

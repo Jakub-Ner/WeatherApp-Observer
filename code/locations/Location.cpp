@@ -9,8 +9,6 @@ Location::Location(std::string &&location_name)
 Location::~Location() {
     delete m_sensors;
     std::cout << " sensor died ";
-//    for(int i=0; i<m_user_list.size(); i++)
-//        delete m_user_list[i];
 }
 
 void Location::add_user(User *user) {
