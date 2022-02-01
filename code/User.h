@@ -20,7 +20,7 @@ private:
 
 public:
     User(const std::string &name);
-
+    User();
     ~User();
 
     User(const User &other);
@@ -41,7 +41,7 @@ public:
 
     std::vector<Measurement> get_measurements_list();
 
-    void add_measurements(Measurement measurement);
+    void add_measurements(Measurement& measurement);
 
     void add_location(std::string &location);
 

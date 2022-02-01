@@ -11,7 +11,6 @@ void Menu::menu() {
     while (m_turn_on) {
         main_menu();
     }
-    m_csi_thread.join();
 }
 
 void Menu::welcome() {
@@ -31,7 +30,7 @@ Hi!
         case welcome_options::create_account:
             std::cout << "\nSet your username\n";
             log_in();
-            if ((*m_current_user).get_name() == "null") {
+            if (m_current_user->get_name() == "null") {
                 m_current_user = m_cs->add_user_and_give_him_location_list(m_string_input);
             } else {
                 std::cout << "\nThis username is already in use. Try be more creative :)\n";
@@ -42,7 +41,7 @@ Hi!
         case welcome_options::log_in:
             std::cout << "\nEnter your username\n";
             log_in();
-            if ((*m_current_user).get_name() == "null") {
+            if (m_current_user->get_name() == "null") {
                 std::cout << "\nCouldn't find the user\n";
                 welcome();
             }
@@ -122,6 +121,10 @@ void Menu::display_measurement(std::vector<Measurement> measurement_list) {
         }
         std::cout << "\n";
     }
+}
+
+void Menu::join_thread() {
+    m_csi_thread.join();
 }
 
 

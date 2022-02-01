@@ -20,16 +20,16 @@ public:
 
 public:
     void add_user(User *user);
-
+    int get_user_list_size();
     std::string &get_location_name();
 
-    const std::vector<User *> &get_user_list();
+    User &get_user(int i);
 
     bool remove(User *user);
 
     Measurement set_measurement();
 
-    Measurement get_measurement();
+    Measurement &get_measurement();
 };
 
 #endif //WEATHERAPP_LOCATION_H

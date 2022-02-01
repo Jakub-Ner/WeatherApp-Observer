@@ -8,11 +8,6 @@
 #include "../locations/locations/Wroclaw.h"
 #include "../../Memory_tracker.h"
 
-#ifdef DEBUG
-#define LOG(x) std::cout<<"--------"<< x << "--------\n"
-#else
-#define LOG(x)
-#endif DEBUG
 
 
 CS::CS() {
@@ -57,10 +52,12 @@ void CS::run() {
 
     for (int i = 0; i < m_location_list.size(); i++) {
         m_location_list[i]->set_measurement();
-        for (int j = 0; j < m_location_list[i]->get_user_list().size(); j++) {
+        for (int j = 0; j < m_location_list[i]->get_user_list_size(); j++) {
             ////  add measurement to list of each user
-            m_location_list[i]->get_user_list()[j]\
-->add_measurements(m_location_list[i]->get_measurement());
+            LOG("user list");
+            m_location_list[i]->get_user(j)\
+            .add_measurements(m_location_list[i]->get_measurement());
+            LOG("end");
         }
     }
 }

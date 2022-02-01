@@ -1,8 +1,10 @@
 #ifndef WEATHERAPP_MEMORY_TRACKER_H
 #define WEATHERAPP_MEMORY_TRACKER_H
 
-#define DEBUG
+//#define DEBUG
+
 #ifdef DEBUG
+#define LOG(x) std::cout<<"--------"<< x << "--------\n"
 
 #include <iostream>
 
@@ -14,6 +16,9 @@ struct Memory_tracker {
 void *operator new(size_t size);
 
 void operator delete(void *memory, size_t size);
+
+#else
+#define LOG(x)
 #endif DEBUG
 
 #endif //WEATHERAPP_MEMORY_TRACKER_H

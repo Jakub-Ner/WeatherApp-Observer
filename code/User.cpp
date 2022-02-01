@@ -10,7 +10,12 @@ User::User(const std::string &name)
         : m_name(name) {
     if (m_dont_care != 0) {
         std::cout << "\n Welcome " << m_name << "!\n";
+        m_measurement_list.reserve(10);
     } else m_dont_care = 1;
+}
+
+User::User() {
+
 }
 
 User::User(const User &other)
@@ -22,12 +27,12 @@ User::~User() {
     std::cout << "\nBye bye " << m_name << "!";
 }
 
+
 const std::string &User::get_name() const {
     return m_name;
 }
 
-
-void User::add_measurements(Measurement measurement) {
+void User::add_measurements(Measurement &measurement) {
     m_measurement_list.emplace_back(measurement);
 }
 

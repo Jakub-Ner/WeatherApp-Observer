@@ -6,7 +6,7 @@
 
 
 Location::Location(std::string &&location_name)
-        : m_location_name(location_name) {}
+        : m_location_name(location_name) {m_user_list.reserve(5);}
 
 Location::~Location() {
     std::cout << " sensor died ";
@@ -32,10 +32,14 @@ Measurement Location::set_measurement() {
     return m_sensors;
 }
 
-Measurement Location::get_measurement() {
+Measurement &Location::get_measurement() {
     return m_sensors;
 }
 
-const std::vector<User *> &Location::get_user_list() {
-    return m_user_list;
+User &Location::get_user(int i) {
+    return *m_user_list[i];
+}
+
+int Location::get_user_list_size() {
+    return m_user_list.size();
 }

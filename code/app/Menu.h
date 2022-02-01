@@ -14,7 +14,10 @@ class Menu : public UserApp {
 public:
     void menu();
 
+    void join_thread();
+
 private:
+
     void welcome();
 
     void main_menu();

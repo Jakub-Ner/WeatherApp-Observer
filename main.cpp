@@ -5,5 +5,7 @@ int main() {
 //    ::testing::InitGoogleTest();
 //    RUN_ALL_TESTS();
 
-    Menu().menu();
+    Menu menu;
+    menu.menu();
+    menu.join_thread();
 }
