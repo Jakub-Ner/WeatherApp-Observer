@@ -2,6 +2,7 @@
 #include <algorithm>
 #include "User.h"
 #include "functions.h"
+#include "../Memory_tracker.h"
 
 int User::m_dont_care = 0;
 

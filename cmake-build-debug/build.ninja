@@ -176,6 +176,13 @@ build CMakeFiles/untitled.dir/Tests/test.cpp.o: CXX_COMPILER__untitled_Debug /ho
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir/Tests
 
+build CMakeFiles/untitled.dir/Memory_tracker.cpp.o: CXX_COMPILER__untitled_Debug /home/jakubner/CLionProjects/WeatherApp-Observer/Memory_tracker.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/Memory_tracker.cpp.o.d
+  FLAGS = -pthread -g -std=gnu++17
+  INCLUDES = -isystem /home/jakubner/CLionProjects/WeatherApp-Observer/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/jakubner/CLionProjects/WeatherApp-Observer/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target untitled
@@ -184,7 +191,7 @@ build CMakeFiles/untitled.dir/Tests/test.cpp.o: CXX_COMPILER__untitled_Debug /ho
 #############################################
 # Link the executable untitled
 
-build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/code/app/Menu.cpp.o CMakeFiles/untitled.dir/code/app/UserApp.cpp.o CMakeFiles/untitled.dir/code/User.cpp.o CMakeFiles/untitled.dir/code/API/CS.cpp.o CMakeFiles/untitled.dir/code/locations/Location.cpp.o CMakeFiles/untitled.dir/shit.cpp.o CMakeFiles/untitled.dir/code/Measurement.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Siechnice.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Opole.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Krakow.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o CMakeFiles/untitled.dir/Tests/test.cpp.o | lib/libgtest_maind.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
+build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/code/app/Menu.cpp.o CMakeFiles/untitled.dir/code/app/UserApp.cpp.o CMakeFiles/untitled.dir/code/User.cpp.o CMakeFiles/untitled.dir/code/API/CS.cpp.o CMakeFiles/untitled.dir/code/locations/Location.cpp.o CMakeFiles/untitled.dir/shit.cpp.o CMakeFiles/untitled.dir/code/Measurement.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Siechnice.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Opole.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Krakow.cpp.o CMakeFiles/untitled.dir/code/locations/locations/Wroclaw.cpp.o CMakeFiles/untitled.dir/Tests/test.cpp.o CMakeFiles/untitled.dir/Memory_tracker.cpp.o | lib/libgtest_maind.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
   FLAGS = -pthread -g
   LINK_LIBRARIES = lib/libgtest_maind.a  lib/libgtestd.a  -lpthread
   OBJECT_DIR = CMakeFiles/untitled.dir

@@ -19,7 +19,7 @@ add_executable(untitled main.cpp
         code/locations/locations/Opole.cpp code/locations/locations/Opole.h
         code/locations/locations/Krakow.cpp code/locations/locations/Krakow.h
         code/locations/locations/Wroclaw.cpp code/locations/locations/Wroclaw.h
-        code/functions.h Tests/test.cpp)
+        code/functions.h Tests/test.cpp Memory_tracker.cpp Memory_tracker.h)
 
 target_link_libraries(untitled gtest_main)
 add_test(NAME test COMMAND untitled)

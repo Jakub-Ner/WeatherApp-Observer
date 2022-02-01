@@ -2,6 +2,8 @@
 #include <iostream>
 #include <algorithm>
 #include "../functions.h"
+#include "../../Memory_tracker.h"
+
 
 Location::Location(std::string &&location_name)
         : m_location_name(location_name) {}

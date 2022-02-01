@@ -1,6 +1,7 @@
 #include <iostream>
 #include <thread>
 #include "UserApp.h"
+#include "../../Memory_tracker.h"
 
 
 UserApp::UserApp() {

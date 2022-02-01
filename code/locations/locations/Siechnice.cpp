@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Siechnice.h"
+#include "../../../Memory_tracker.h"
 
 
 Siechnice::Siechnice()
@@ -8,5 +9,5 @@ Siechnice::Siechnice()
 }
 
 Siechnice::~Siechnice() {
-    std::cout << " Siechnice died \n";
+    std::cout << " Siechnice died ";
 }

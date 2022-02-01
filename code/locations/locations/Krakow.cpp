@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Krakow.h"
+#include "../../../Memory_tracker.h"
 
 
 Krakow::Krakow()
@@ -8,7 +9,7 @@ Krakow::Krakow()
 }
 
 Krakow::~Krakow() {
-    std::cout << " Krakow died \n";
+    std::cout << " Krakow died ";
 }
 
 

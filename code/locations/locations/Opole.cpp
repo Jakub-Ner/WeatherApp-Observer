@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Opole.h"
+#include "../../../Memory_tracker.h"
 
 
 Opole::Opole()
@@ -8,7 +9,7 @@ Opole::Opole()
 }
 
 Opole::~Opole() {
-    std::cout << " Opole died \n";
+    std::cout << " Opole died ";
 }
 
 
