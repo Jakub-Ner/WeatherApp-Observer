@@ -12,7 +12,7 @@ Location::~Location() {
     std::cout << " sensor died ";
 }
 
-void Location::add_user(User *user) {
+void Location::add_user(User* const user) {
     m_user_list.emplace_back(user);
 }
 
@@ -23,7 +23,7 @@ bool Location::remove(User *user) {
     return true;
 }
 
-std::string &Location::get_location_name() {
+const std::string &Location::get_location_name() {
     return m_location_name;
 }
 
@@ -32,8 +32,8 @@ Measurement Location::set_measurement() {
     return m_sensors;
 }
 
-Measurement &Location::get_measurement() {
-    return m_sensors;
+Measurement* const Location::get_measurement() {
+    return &m_sensors;
 }
 
 User &Location::get_user(int i) {

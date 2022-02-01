@@ -14,7 +14,7 @@ protected:
     const std::string m_name;
 private:
     static int m_dont_care;
-    std::vector<Measurement> m_measurement_list;
+    std::vector<Measurement*> m_measurement_list;
     std::vector<std::string> m_available_locations;
     std::vector<std::string> m_user_locations;
 
@@ -39,9 +39,9 @@ public:
 
     const std::string &get_name() const;
 
-    std::vector<Measurement> get_measurements_list();
+    const std::vector<Measurement*> &get_measurements_list() const;
 
-    void add_measurements(Measurement& measurement);
+    void add_measurements(Measurement* const measurement);
 
     void add_location(std::string &location);
 

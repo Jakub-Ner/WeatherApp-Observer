@@ -54,10 +54,8 @@ void CS::run() {
         m_location_list[i]->set_measurement();
         for (int j = 0; j < m_location_list[i]->get_user_list_size(); j++) {
             ////  add measurement to list of each user
-            LOG("user list");
             m_location_list[i]->get_user(j)\
             .add_measurements(m_location_list[i]->get_measurement());
-            LOG("end");
         }
     }
 }

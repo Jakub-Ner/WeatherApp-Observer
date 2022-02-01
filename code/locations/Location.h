@@ -19,9 +19,9 @@ public:
     virtual ~Location() = 0;
 
 public:
-    void add_user(User *user);
+    void add_user(User* const user);
     int get_user_list_size();
-    std::string &get_location_name();
+    const std::string &get_location_name();
 
     User &get_user(int i);
 
@@ -29,7 +29,7 @@ public:
 
     Measurement set_measurement();
 
-    Measurement &get_measurement();
+    Measurement* const get_measurement();
 };
 
 #endif //WEATHERAPP_LOCATION_H

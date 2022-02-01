@@ -32,11 +32,11 @@ const std::string &User::get_name() const {
     return m_name;
 }
 
-void User::add_measurements(Measurement &measurement) {
+void User::add_measurements(Measurement* const measurement) {
     m_measurement_list.emplace_back(measurement);
 }
 
-std::vector<Measurement> User::get_measurements_list() {
+const std::vector<Measurement*> &User::get_measurements_list() const{
     return m_measurement_list;
 }
 
