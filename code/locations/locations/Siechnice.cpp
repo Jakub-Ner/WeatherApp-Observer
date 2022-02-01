@@ -5,7 +5,7 @@
 
 Siechnice::Siechnice()
         : Location("Siechnice") {
-    m_sensors = new Measurement(m_location_name, 19, 71, false);
+    m_sensors = Measurement(m_location_name, 19, 71, false);
 }
 
 Siechnice::~Siechnice() {

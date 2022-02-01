@@ -9,7 +9,6 @@ Location::Location(std::string &&location_name)
         : m_location_name(location_name) {}
 
 Location::~Location() {
-    delete m_sensors;
     std::cout << " sensor died ";
 }
 
@@ -28,12 +27,12 @@ std::string &Location::get_location_name() {
     return m_location_name;
 }
 
-Measurement *Location::set_measurement() {
-    m_sensors->set_new_measurements();
+Measurement Location::set_measurement() {
+    m_sensors.set_new_measurements();
     return m_sensors;
 }
 
-Measurement *Location::get_measurement() {
+Measurement Location::get_measurement() {
     return m_sensors;
 }
 

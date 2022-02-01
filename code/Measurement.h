@@ -19,6 +19,8 @@ public:
                 std::optional<float> &&humidity,
                 std::optional<bool> &&cloudy);
 
+    Measurement();
+
     void set_new_measurements();
 
     const std::string &get_location() const;

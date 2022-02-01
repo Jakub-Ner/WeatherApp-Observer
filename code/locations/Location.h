@@ -9,7 +9,7 @@
 class Location {
     std::vector<User *> m_user_list;
 protected:
-    Measurement *m_sensors;
+    Measurement m_sensors;
 
     std::string m_location_name;
 protected:
@@ -27,9 +27,9 @@ public:
 
     bool remove(User *user);
 
-    Measurement *set_measurement();
+    Measurement set_measurement();
 
-    Measurement *get_measurement();
+    Measurement get_measurement();
 };
 
 #endif //WEATHERAPP_LOCATION_H

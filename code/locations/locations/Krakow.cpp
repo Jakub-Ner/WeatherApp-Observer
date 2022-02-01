@@ -5,7 +5,7 @@
 
 Krakow::Krakow()
         : Location("Krakow") {
-    m_sensors = new Measurement(m_location_name, 10, 11, {});
+    m_sensors = Measurement(m_location_name, 10, 11, {});
 }
 
 Krakow::~Krakow() {

@@ -19,9 +19,9 @@ CS::CS() {
     m_user_list.reserve(3);
     m_user_list.emplace_back(new User("null")); // <- "null" user
     int locations_number = 4;
+    m_location_list.reserve(locations_number);
 
     LOG("Four Locations are allocating");
-    m_location_list.reserve(locations_number);
     m_location_list.emplace_back(new Krakow());
     m_location_list.emplace_back(new Opole());
     m_location_list.emplace_back(new Siechnice());

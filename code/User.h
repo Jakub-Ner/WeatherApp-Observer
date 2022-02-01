@@ -41,7 +41,7 @@ public:
 
     std::vector<Measurement> get_measurements_list();
 
-    void add_measurements(Measurement *measurement);
+    void add_measurements(Measurement measurement);
 
     void add_location(std::string &location);
 
